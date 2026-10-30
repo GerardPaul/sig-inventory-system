@@ -264,7 +264,7 @@ if(isset($_SESSION['username'])&&isset($_SESSION['password'])){
                         </div>        
                         <?php }
                 }?>
-        <div class="container center-block" style="width: 600px;">
+        <div class="container center-block login-box" style="width: 600px;">
                 <form class="form-horizontal well" name="sign-in" method="post" action="methods/actions.php">
                         <div class="modal-header">
                             <h3>Sign In</h3>

@@ -14,8 +14,8 @@
         <div class = "navbar navbar-inverse navbar-fixed-top">
             <div class = "navbar-inner">
                 <div class = "container">
-                    <a href = "index.php" class = "navbar-brand">SIG Inventory System</a>
                     <div class="navbar-header">
+                        <a href = "index.php" class = "navbar-brand">SIG Inventory System</a>
                         <button type='button' class = "navbar-toggle" data-toggle = "collapse" data-target = ".navHeaderCollapse">
                             <span class = "icon-bar"></span>
                             <span class = "icon-bar"></span>
@@ -23,6 +23,7 @@
                         </button>
                     </div>
                     <div class = "collapse navbar-collapse navHeaderCollapse">
+                        <?php if(isset($_SESSION['username'])&&isset($_SESSION['password'])){ ?>
                         <ul class = "nav navbar-nav ">
                             <li class = "active"><a href = "index.php">Home</a></li>
                             <!--<li><a href = "" onclick="logout()">Logout</a></li>
@@ -37,6 +38,7 @@
                                 </div>
                             </div>
                         </form>
+                        <?php } ?>
                         
                         <!--<form class="nav navbar-form navbar-right" role="search">
                           <div class="form-group ">

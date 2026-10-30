@@ -12,7 +12,7 @@
             <div class="container text-center">
                 <p class="footerCredit">
                     &copy; SIG-OJT Project 2014<br>
-                    Sheena Mae J. Erecre ,Gerard Paul P. Labitad
+                    <a href="https://gerardpaul.github.io/thegpworx/" target="_blank" rel="noopener">TheGPWorx</a>
                 </p>
             </div>
         </div>
@@ -31,6 +31,26 @@
             });
             
             $("[rel='popover']").popover({ trigger: "hover" });
+            
+            $(document).ready(function(){
+                var perPage = 10;
+                $('.tab-pane table').each(function(){
+                    var rows = $(this).find('tbody tr'), pages = Math.ceil(rows.length / perPage);
+                    if (pages < 2) return;
+                    var nav = $('<ul class="pagination pagination-sm"></ul>');
+                    function show(n){
+                        rows.hide().slice((n - 1) * perPage, n * perPage).show();
+                        nav.find('li').removeClass('active').eq(n - 1).addClass('active');
+                    }
+                    for (var i = 1; i <= pages; i++){
+                        $('<li><a href="#">' + i + '</a></li>').appendTo(nav).click((function(n){
+                            return function(e){ e.preventDefault(); show(n); };
+                        })(i));
+                    }
+                    $(this).closest('.tab-pane').css('height', 'auto').append($('<div class="pager-nav"></div>').append(nav));
+                    show(1);
+                });
+            });
             
             $(document).ready(function(){
                 $('.table-fixed-header').fixedHeader();
