@@ -166,3 +166,7 @@ body{
 .pager-nav .pagination{
     margin:0;
 }
+
+tbody.dataCont{
+    height:auto;
+}
